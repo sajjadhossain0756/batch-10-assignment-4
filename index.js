@@ -55,26 +55,50 @@
 
 // problem-4 start here
 
-function calculateFinalScore(obj) {
+// function calculateFinalScore(obj) {
 
-     if(typeof obj !== "object"){
-        return "Invalid Input";
-     }
+//      if(typeof obj !== "object"){
+//         return "Invalid Input";
+//      }
 
-     let totalScore = obj.testScore + obj.schoolGrade;
+//      let totalScore = obj.testScore + obj.schoolGrade;
 
-     if(obj.isFFamily === true){
-        totalScore += 20;
-     }
+//      if(obj.isFFamily === true){
+//         totalScore += 20;
+//      }
      
-     const finalScore = totalScore >= 80 ? true : false ;
+//      const finalScore = totalScore >= 80 ? true : false ;
 
-     return finalScore;
+//      return finalScore;
      
+// }
+
+// const person1 = { name: "Rajib", testScore: 45,  schoolGrade: 35, isFFamily : false };
+
+// const resultCalculate = calculateFinalScore(person1); 
+
+// console.log(resultCalculate);
+
+// problem-5 start here
+
+function  waitingTime(waitingTimes  , serialNumber) {
+        
+        if(!Array.isArray(waitingTimes) || typeof serialNumber !== "number"){
+                 return "Invalid Input";
+        }
+
+        let totalTime = 0;
+        for(let time of waitingTimes){
+            totalTime = totalTime + time;
+        }
+        let averageTime = Math.round(totalTime / waitingTimes.length);
+        let availableCandidate = serialNumber - waitingTimes.length - 1;
+        let finalWatingTimes = availableCandidate * averageTime;
+        return finalWatingTimes;
 }
 
-const person1 = { name: "Rajib", testScore: 45,  schoolGrade: 35, isFFamily : false };
+const interviewTime = [6];
 
-const resultCalculate = calculateFinalScore(person1); 
+const result = waitingTime(interviewTime, 4);
 
-console.log(resultCalculate);
+console.log(result);
