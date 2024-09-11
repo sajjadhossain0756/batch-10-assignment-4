@@ -35,23 +35,24 @@
 
 // problem-3 start here
 
-// function checkDigitsInName(name) {
-//     const sajjad = name.split("");
-//     console.log(sajjad.lenght);
-//     for(let i =0; i < sajjad.lenght; i++){
-        
-//         if( i <= 0 || item > 0){
-//             return true;
-//         }
-//         else{
-//             return false
-//         }
-//     }
-    
-// }
+function checkDigitsInName(name) {
 
-// const result = checkDigitsInName("rahim0");
-// console.log(result);
+    if(typeof name !== "string"){
+        return "Invalid Input";
+    }
+    
+    if(name.match("0") || name.match("1") || name.match("2") || name.match("3") || name.match("4")
+    || name.match("5") || name.match("6") || name.match("7") || name.match("8") || name.match("9")){
+        return true;
+    }
+    else{
+        return false;
+    }
+    
+}
+
+const result = checkDigitsInName(["Raj"]);
+console.log(result);
 
 // problem-4 start here
 
@@ -81,24 +82,24 @@
 
 // problem-5 start here
 
-function  waitingTime(waitingTimes  , serialNumber) {
+// function  waitingTime(waitingTimes  , serialNumber) {
         
-        if(!Array.isArray(waitingTimes) || typeof serialNumber !== "number"){
-                 return "Invalid Input";
-        }
+//         if(!Array.isArray(waitingTimes) || typeof serialNumber !== "number"){
+//                  return "Invalid Input";
+//         }
 
-        let totalTime = 0;
-        for(let time of waitingTimes){
-            totalTime = totalTime + time;
-        }
-        let averageTime = Math.round(totalTime / waitingTimes.length);
-        let availableCandidate = serialNumber - waitingTimes.length - 1;
-        let finalWatingTimes = availableCandidate * averageTime;
-        return finalWatingTimes;
-}
+//         let totalTime = 0;
+//         for(let time of waitingTimes){
+//             totalTime = totalTime + time;
+//         }
+//         let averageTime = Math.round(totalTime / waitingTimes.length);
+//         let availableCandidate = serialNumber - waitingTimes.length - 1;
+//         let finalWatingTimes = availableCandidate * averageTime;
+//         return finalWatingTimes;
+// }
 
-const interviewTime = [6];
+// const interviewTime = [6];
 
-const result = waitingTime(interviewTime, 4);
+// const result = waitingTime(interviewTime, 4);
 
-console.log(result);
+// console.log(result);
